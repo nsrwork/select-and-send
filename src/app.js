@@ -233,7 +233,7 @@
   }
 
   class App {
-    constructor ({ currentUrl, ajaxUrl, csrfToken }) {
+    constructor ({ currentUrl, ajaxUrl, csrfToken, action }) {
       this.el = window.document.body
 
       // текущий урл страницы на которой произошел вызов
@@ -244,6 +244,9 @@
 
       // токен формы
       this.csrfToken = csrfToken
+
+      // акшин (используется в лпагинах WP)
+      this.action = action
 
       // инициализация сервиса отправки данных
       this.http = new HttpService()
@@ -259,6 +262,7 @@
       // предустановка компонента формы
       this.form = new FormComponent({ el: this.el })
       this.form.csrf = this.csrfToken
+      this.form.action = this.action
       this.form.data = this.currentUrl
     }
 

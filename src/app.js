@@ -5,7 +5,7 @@
 {
   'use strict'
 
-  const APPLICATION = 'select-and-spend'
+  const APPLICATION = 'select-and-send'
   const JS_CLASS_SUBMIT_BTN = 'js-submit-button'
 
   const BUTTON_STATE_SEND = 'send'
@@ -233,19 +233,23 @@
   }
 
   class App {
-    constructor ({ currentUrl, ajaxUrl, csrfToken, action }) {
+    constructor ({ ajaxUrl, currentUrl, csrfToken, action }) {
       this.el = window.document.body
 
-      // текущий урл страницы на которой произошел вызов
-      this.currentUrl = currentUrl
+      if (!ajaxUrl) {
+        throw new Error('Неопределен обязательный параметр ajaxUrl')
+      }
 
       // endpoint
       this.ajaxUrl = ajaxUrl
 
+      // текущий урл страницы на которой произошел вызов
+      this.currentUrl = currentUrl || window.location.href
+
       // токен формы
       this.csrfToken = csrfToken
 
-      // акшин (используется в лпагинах WP)
+      // экшин (используется в плагинах WP)
       this.action = action
 
       // инициализация сервиса отправки данных
@@ -371,5 +375,5 @@
   }
 
   // для доступа в глобальном окружении
-  window.SelectAndSpend = App
+  window.SelectAndSend = App
 }

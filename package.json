@@ -1,9 +1,18 @@
 {
   "name": "select-and-send",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "",
   "main": "app.js",
   "dependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsrwork/select-and-send"
+  },
   "author": "nsrwork",
-  "license": "MIT"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsrwork/select-and-send/issues"
+  },
+  "homepage": "https://github.com/nsrwork/select-and-send#readme"
 }

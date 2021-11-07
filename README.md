@@ -8,7 +8,7 @@
 ## Инициализация
 
 ```js
-import { SendAndSelect } from './app.js';
+import { SelectAndSend } from './select-and-send/src/app.js';
 
 new SelectAndSend({
   ajaxUrl: '/',

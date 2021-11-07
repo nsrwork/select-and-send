@@ -2,7 +2,7 @@ import { FormComponent, FORM_EVENT_SEND, FORM_EVENT_SUCCESS, FORM_EVENT_FAIL, FO
 import { ModalComponent, MODAL_EVENT_RENDERED, MODAL_EVENT_SHOW, MODAL_EVENT_HIDE } from './modal.js';
 import { wrapSelection } from './dom_utils.js';
 
-export class SendAndSelect {
+export class SelectAndSend {
     constructor({ ajaxUrl, data = {} }) {
         this.el = window.document.body;
 
